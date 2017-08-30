@@ -1,0 +1,317 @@
+html {
+
+  background: #f3f3f3;
+  
+}
+
+body {
+
+  @include sans-light();
+
+}
+
+.omelet_tm {
+
+  &::after {
+
+    content: 'TM';
+    position: relative;
+    display: inline;
+    font-size: .7rem;
+    font-weight: bold;
+    vertical-align: top;
+    padding-left: 2px;
+
+  }
+
+
+
+}
+
+a, a:hover {
+
+  color: $white_color;
+  text-decoration: none;
+
+}
+
+div {
+
+  position: relative;
+
+}
+
+ul {
+
+  padding: 0;
+  margin: 0;
+
+  li {
+
+    list-style: none;
+
+  }
+
+}
+
+.hidden {
+
+  display: none !important;
+
+}
+
+
+
+
+.egg {
+
+  &::before, &::after {
+
+    content: '';
+    position: absolute;
+    transition: all .5s ease-out;
+
+  }
+
+  &::before {
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+  }
+
+  &::after {
+
+    bottom: 10%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: linear-gradient(transparent, transparent, rgba(0, 0, 0, 0.18));
+    box-shadow: 0 100px 100px rgba(0, 0, 0, 0.2);
+
+
+  }
+
+}
+
+.bg-white-gradient::before {
+
+  content: '';
+
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: radial-gradient(rgba(255, 255, 255, 0.11), transparent);
+  z-index: 0;
+
+}
+
+.section {
+
+  width: 100%;
+  padding: 80px 0;
+  position: relative;
+
+
+  .section_title, .section_desc {
+
+    font-weight: 400;
+    text-align: center;
+    color: inherit;
+
+  }
+
+  .section_title {
+
+    font-size: 3.4rem;
+
+  }
+
+  .section_desc {
+
+    font-size: 1.6rem;
+    line-height: 3rem;
+    margin-top: 25px;
+
+  }
+
+}
+
+.section_before, .section_after {
+
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 30%;
+  height: 30%;
+  background: no-repeat center;
+  background-size: contain;
+
+}
+
+.section_before {
+
+
+  left:0;
+  background-position: left bottom;
+
+}
+
+.section_after {
+
+
+  right:0;
+  background-position: right bottom;
+
+}
+
+
+.popup-dialog-wrapper {
+
+  @include flex( center, center );
+
+  display: none;
+
+  width: 100%;
+  height: 100%;
+  position: fixed;
+
+  z-index: 999;
+
+  left: 0;
+  top: 0;
+
+  background: rgba(0, 0, 0, 0.3);
+
+  .popup-dialog {
+
+    @include flex( center, center );
+    flex-direction: column;
+
+    width: 90%;
+    max-width: 800px;
+    min-height: 400px;
+
+    padding: 25px;
+
+    background: #e2e2e2;
+    color: #777;
+
+    border-radius: 10px;
+
+    .poster {
+
+      width: 100%;
+      height: 200px;
+
+      background: no-repeat center;
+
+    }
+    
+    .text {
+
+      margin-top: 50px;
+
+      text-align: center;
+      font-size: 1.8rem;
+      
+    }
+
+    .button {
+
+      padding: 15px 25px;
+      min-width: 150px;
+      text-transform: uppercase;
+      margin-top: 50px;
+      border: 1px solid #bdbdbd;
+      color: #bdbdbd;
+      border-radius: 3px;
+      text-align: center;
+      cursor: pointer;
+
+      &:hover {
+
+        border: 1px solid #adadad;
+        color: #adadad;
+
+      }
+
+
+    }
+
+  }
+
+}
+
+
+
+/*------------ System Messages----------*/
+.bn-message_content {
+
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  flex-direction: column;
+  z-index: 9;
+
+}
+
+.bn-message_content .bn-message {
+
+  padding: 15px 20px;
+
+  color: #e9e9e9;
+  background: #202020;
+  border-radius: 3px;
+  margin: 20px 0;
+  display: none;
+
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+
+  .message-container {
+
+    @include flex( flex-start, flex-start );
+    min-width: 350px;
+
+  }
+
+  .bn-message-img {
+
+    width: 60px;
+    height: 60px;
+    background: url(../img/crack_egg_attainment.png) no-repeat center;
+    background-size: contain;
+    margin-right: 15px;
+
+  }
+
+  .title {
+
+    font-size: 1.4rem;
+    line-height: 1.4rem;
+
+  }
+
+  .text {
+
+    margin-top: 7px;
+    font-size: 1rem;
+
+  }
+
+
+}

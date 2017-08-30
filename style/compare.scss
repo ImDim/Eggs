@@ -1,0 +1,109 @@
+.compare {
+
+    position: relative;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+}
+
+.compare img {
+
+    position: absolute;
+    width: 100%;
+    height: auto;
+    left: 0;
+    top: 0;
+
+}
+
+.compare .moved_block {
+
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    left: 0;
+    overflow: hidden;
+
+}
+
+
+
+.compare .compare_separator, .compare .compare_separator .line {
+
+    width: 25px;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 9;
+    cursor: move;
+
+
+}
+
+.compare .compare_separator .line {
+
+    width: 1px;
+    left: 50%;
+    background: #6a4d15;
+
+
+}
+
+.compare .compare_separator .arrow {
+
+    width: 25px;
+    height: 10px;
+    position: absolute;
+    border: 1px solid #6a4d15;
+    border-top: none;
+    border-bottom: none;
+
+    top: 0;
+    left: 0px;
+
+
+
+    &::before, &::after {
+
+        content: '';
+        position: absolute;
+        height: 20px;
+        width: 1px;
+        background: #6a4d15;
+        top: -5px;
+        bottom: 0;
+
+    }
+
+
+    &::before {
+
+        left: 5px;
+
+    }
+
+    &::after {
+
+        right: 5px;
+
+    }
+
+}
+
+
+
+.compare .compare_separator .top_arrow {
+
+    top: 10px;
+
+}
+
+.compare .compare_separator .bottom_arrow {
+
+    top: auto;
+    bottom: 10px;
+
+}

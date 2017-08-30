@@ -1,0 +1,444 @@
+/* Desktops and laptops ----------- */
+@media only screen  and (max-width : 1000px) {
+
+    #body {
+
+
+        .top_menu__container {
+
+            .top_menu__trigger {
+
+                display: block;
+                z-index: 10;
+
+            }
+
+            .top_menu {
+
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+                background: rgba(0, 0, 0, 0.7);
+                z-index: 9;
+
+                display: none;
+
+
+            }
+
+
+
+        }
+
+
+        .top_menu__container-active {
+
+            .top_menu {
+
+                @include flex( center, center );
+                flex-direction: column;
+
+                .top_menu__item {
+
+                    @include sans-reg();
+
+                    margin: 0;
+                    padding: 25px 25px;
+                    color: #FFF;
+
+
+
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+
+                }
+
+            }
+
+
+
+        }
+
+
+
+        .tariff_wrap {
+
+            margin-top: 50px;
+
+            .tariff:nth-child(2) {
+
+                &::after {
+
+                    display: none;
+
+                }
+
+            }
+
+            .tariff {
+
+                padding: 25px;
+                min-width: 100%;
+                flex-grow: 1;
+
+                border: 0 solid #292929;
+                border-top-width: 1px;
+
+                &::before {
+
+                    content: '';
+                    position: absolute;
+                    width: 100%;
+                    height: 1px;
+                    background: #1f1f1f;
+
+                }
+
+                &::before {
+
+                    top: -2px;
+
+                }
+
+                .advantages {
+
+                    min-height: 0;
+
+                }
+
+                .tariff_bottom {
+
+                    margin-top: 50px;
+
+                }
+
+            }
+
+        }
+
+    }
+
+
+
+
+}
+
+
+@media only screen  and (max-width : 770px) {
+
+    #body {
+
+        .popup-dialog {
+
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+
+        }
+
+        .section .section_title {
+
+            font-size: 3rem;
+            line-height: 3.5rem;
+
+        }
+
+        .section .section_desc {
+
+            font-size: 1.4rem;
+            line-height: 2.4rem;
+            margin-top: 1.5625rem;
+
+        }
+
+        .section_before, .section_after {
+
+            display: none;
+
+        }
+
+        .header_section {
+
+            .center_block {
+
+                margin-top: 10%;
+
+
+            }
+
+            .egg_container {
+
+                min-height: 300px;
+
+                .egg {
+
+                    top: 30px;
+
+                }
+
+            }
+
+        }
+
+
+        .egg_colors {
+
+            margin-top: 50px;
+
+        }
+
+        .egg_color__variant {
+
+            margin-bottom: 120px;
+
+            .egg_color__variant__image {
+
+                margin-top: 30px;
+
+            }
+
+
+        }
+
+        .healthy_wrapper {
+
+            margin-top: 100px;
+
+
+            .half_egg {
+
+                position: absolute;
+                top: 0;
+                left: 50%;
+                margin-left: -135px;
+                filter: blur(5px);
+                opacity: 0.4;
+
+            }
+
+
+            .healthy_list {
+
+                @include flex(center, space-between);
+                flex-wrap: wrap;
+
+            }
+
+            .healthy_item {
+
+                .point, .line {
+
+                    display: none;
+
+                }
+
+            }
+
+            .healthy_item__benefit {
+
+                border: none;
+                border-top: 0.0625rem solid rgba(255, 255, 255, 0.4);
+                padding: 25px 0;
+                padding-bottom: 0;
+
+            }
+
+        }
+
+
+
+        .cleaning_egg {
+
+            width: 100%;
+
+        }
+
+        .cleaning_wrapper {
+
+            margin-top: 20px;
+
+        }
+
+
+
+        .reviews_wrap {
+
+            .rev_arrows {
+
+                top: -85px;
+
+
+            }
+
+            .prev_rev_arrow {
+
+                left: 3%;
+
+            }
+
+            .next_rev_arrow {
+
+                right: 3%;
+
+            }
+
+            .reviews__item__text {
+
+                font-size: 1.4rem;
+
+            }
+
+        }
+
+        .reviews_bottom {
+
+            display: none;
+
+        }
+
+
+
+
+
+
+        .footer {
+
+            text-align: center;
+
+            .footer__menu {
+
+                display: none;
+                
+            }
+
+        }
+
+    }
+
+}
+
+/* Desktops and laptops ----------- */
+@media only screen  and (max-width : 410px) {
+
+
+    #body {
+
+        .section {
+
+            padding: 40px 0;
+
+            .section_title {
+
+                font-size: 2rem;
+                line-height: 2.8rem;
+
+            }
+
+            .section_desc {
+
+                font-size: 1.2rem;
+                line-height: 2rem;
+                margin-top: 1.5625rem;
+
+            }
+
+        }
+
+        .bn-message_content {
+
+            left: 15px;
+            width: auto;
+
+            .bn-message {
+
+                .message-container {
+
+                    width: auto;
+                    min-width: 0;
+
+                    .title {
+
+                        font-size: 1.2rem;
+                        line-height: 1.2rem;
+
+                    }
+
+                    .text {
+
+                        margin-top: 7px;
+                        font-size: .9rem;
+
+                    }
+
+                }
+
+            }
+
+        }
+
+        .header_section {padding-top: 0;}
+
+        .healthy_wrapper {
+
+            margin-top: 50px;
+
+
+            .healthy_list {
+
+                @include flex(center, center);
+                flex-wrap: wrap;
+
+            }
+
+
+        }
+
+
+        .reviews_section {
+
+            padding-bottom: 20px;
+
+            .reviews_wrap {
+
+                margin-top: 250px;
+
+                .reviews__item__text {
+
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+
+                }
+
+                .reviews__item_author {
+
+                    font-size: 1.2rem;
+                    line-height: 2rem;
+
+                }
+
+                .reviews__item .reviews__item__avatar {
+                    width: 100px;
+                    height: 100px;
+                    border-radius: 18.75rem;
+                    position: absolute;
+                    left: 50%;
+                    margin-left: -50px;
+                    top: -170px;
+                }
+
+            }
+
+
+        }
+
+
+
+
+
+    }
+
+
+}

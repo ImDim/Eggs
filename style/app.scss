@@ -1,0 +1,1177 @@
+@import 'fonts';
+@import 'mixin';
+@import 'reset';
+@import 'compare';
+
+
+//Main page
+.header_section {
+
+  padding: 0;
+  background: #ce9a6b url(../img/noise.png);
+  color: $white_color;
+
+  //Top menu wrapper
+  .top_menu__wrap {
+
+    @include flex(center, space-between);
+
+    padding: 25px 0;
+    font-weight: 300;
+
+
+    //Logo
+    .logo {
+
+      @include flex(center, flex-start);
+
+      cursor: pointer;
+
+      //Icon of logo
+      .icon {
+
+        background: url(../img/icon.png) no-repeat center;
+        width: 34px;
+        height: 34px;
+
+      }
+
+      //Title site
+      .title {
+
+        margin-left: 15px;
+        font-size: 2rem;
+
+      }
+
+    }
+    ///////////
+
+
+    .top_menu__container {
+
+      @include flex( center, flex-end );
+
+      .top_menu__trigger {
+
+        display: none;
+
+        height: 30px;
+        width: 50px;
+        float: right;
+        cursor: pointer;
+
+        span {
+
+          width: 30px;
+          height: 3px;
+          background: #FFF;
+          top: 15px;
+          cursor: pointer;
+          display: block;
+          position: relative;
+          transition: all 0.1s ease-out 0s;
+
+          &::before, &::after {
+
+            content: '';
+            width: 30px;
+            height: 3px;
+            background: #FFF;
+            position: absolute;
+            left: 0;
+            cursor: pointer;
+            transition: all 0.1s ease-out 0s;
+            opacity: 1;
+
+          }
+
+          &::before {
+
+            top: -8px;
+
+          }
+
+          &::after {
+
+            bottom: -8px;
+
+          }
+
+        }
+
+      }
+
+
+
+    }
+
+    .top_menu__container-active {
+
+      width: 400px;
+
+      .top_menu__trigger {
+
+        span {
+
+          background: transparent;
+
+          &::before, &::after {
+
+            opacity: 1;
+
+          }
+
+          &::before {
+
+            transform: rotate(45deg);
+            top: 0 !important;
+
+          }
+
+          &::after {
+
+            transform: rotate(-45deg);
+            bottom: 0 !important;
+
+          }
+
+        }
+
+      }
+
+
+
+    }
+
+
+    //Menu Bar
+    .top_menu {
+
+
+      .top_menu__item {
+
+        @include sans-reg();
+
+        margin-left: 10px;
+        padding: 5px 25px;
+
+        border: 2px solid transparent;
+        border-radius: 50px;
+
+        font-size: .95rem;
+        text-transform: uppercase;
+
+      }
+
+      .top_menu__item-active {
+
+        border-color: $white_color;
+
+      }
+
+    }
+    //////////////
+
+
+
+
+  }
+  //////////////
+
+
+  //Main info in the Header
+  .center_block {
+
+    @include flex( center, center );
+    flex-direction: column;
+
+    width: 100%;
+    padding: 25px 0;
+    margin-top: 100px;
+
+    .section_title, .section_desc {
+
+      color: $white_color;
+
+    }
+
+
+    .section_title {
+
+      @include sans-reg();
+      font-size: 3.5rem;
+      line-height: 5rem;
+
+    }
+
+    .section_desc {
+
+      font-size: 1.8rem;
+      margin: 0;
+      margin-top: 25px;
+
+
+    }
+
+
+  }
+  ////////////
+
+  //Main Header Egg Container
+  .egg_container {
+
+    width: 100%;
+    min-height: 500px;
+
+    .egg {
+
+      position: absolute;
+
+      top: 100px;
+      left: 50%;
+      margin-left: -87px;
+
+      width: 175px;
+      height: 238px;
+
+      &::before {
+
+
+        background: url(../img/egg.png) no-repeat center;
+
+
+      }
+
+
+
+    }
+
+  }
+  /////////////
+
+}
+
+
+//Shape section
+.design_section {
+
+  color: $gray_color;
+
+  .section_desc {
+
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 80px;
+
+    &::before, &::after {
+
+      content: '';
+      position: absolute;
+      bottom: -30px;
+      border: 15px solid transparent;
+      border-top-color: #e4e4e4;
+      left: 50%;
+      margin-left: -15px;
+
+
+    }
+
+    &::after {
+
+      border: 17px solid transparent;
+      border-top-color: #FFF;
+      margin-left: -17px;
+      bottom: -31px;
+
+
+    }
+
+  }
+
+  //Блок дизайном яиц
+  .egg_colors {
+
+    @include flex( flex-end, space-between );
+    margin-top: 150px;
+
+    //Варианты дизайна
+    .egg_color__variant {
+
+      transition: all .5s ease-out;
+      opacity: 0;
+      transform: scale(.6, .6);
+
+      //Название дизайна
+      .egg_color__variant__title {
+
+        text-align: center;
+        font-size: 2rem;
+
+      }
+
+      //Изображение
+      .egg_color__variant__image {
+
+        width: 100%;
+        max-width: 160px;
+        height: 260px;
+        display: block;
+        margin: auto;
+        margin-top: 60px;
+
+        cursor: pointer;
+
+        &:hover::after {
+
+          box-shadow: 0 150px 100px rgba(0, 0, 0, 0.2);
+
+        }
+
+        &:hover::before {
+
+          top: -20px;
+
+        }
+
+
+      }
+
+
+
+    }
+
+
+    .animated {
+
+
+
+      opacity: 1;
+      transform: none;
+
+
+    }
+
+
+
+    //Color variants
+    .silk_white {
+
+      transition-delay: .2s;
+      
+      .egg_color__variant__title {
+
+        color: #b9b8b8;
+        
+      }
+
+      .egg_color__variant__image::before {
+
+        background-image: url(../img/egg_styles/egg_white.png);
+
+      }
+
+    }
+
+    .elegant_brown {
+
+      transition-delay: .4s;
+
+      .egg_color__variant__title {
+
+        color: #ab907f;
+
+      }
+
+      .egg_color__variant__image::before {
+
+        background-image: url(../img/egg_styles/egg_brown.png);
+
+      }
+
+    }
+
+
+    .dazzling_gold {
+
+      transition-delay: .6s;
+
+      .egg_color__variant__title {
+
+        color: #bf9a61;
+
+      }
+
+      .egg_color__variant__image::before {
+
+        background-image: url(../img/egg_styles/egg_gold.png);
+
+      }
+
+    }
+
+  }
+
+}
+
+
+
+//Healthy section
+.healthy_section {
+
+  background: #80a770;
+  color: $white_color;
+
+  .healthy_before {
+
+    background-image: url(../img/healthy_before.png);
+
+  }
+
+  .healthy_after {
+
+    background-image: url(../img/healthy_after.png);
+
+  }
+
+  .healthy_wrapper {
+
+    margin-top: 160px;
+
+    .half_egg {
+
+      width: 269px;
+      height: 320px;
+
+
+      background: url(../img/half_egg.png) no-repeat center;
+
+    }
+
+
+    .healthy_list {
+
+      //List
+      .healthy_item {
+
+        position: relative;
+        z-index: 1;
+
+        .point {
+
+          @include flex(center, center);
+
+          position: absolute;
+          width: 40px;
+          height: 40px;
+          border: 2px solid #FFF;
+          border-radius: 80px;
+          background: radial-gradient(transparent, rgba(255, 255, 255, 0.3));
+          box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+
+          top: 40px;
+          left: -45%;
+          z-index: 1;
+
+          transition: all .5s ease-out 1s;
+          transform: scale(.6, .6);
+          opacity: 0;
+
+
+
+
+          &::before {
+
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #FFF;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+
+
+
+          }
+
+        }
+
+        .line {
+
+
+          height: 1px;
+          border-top: 1px dashed #FFF;
+          position: absolute;
+          left: 0;
+          margin-left: 40px;
+          right: 100%;
+          top: 35%;
+          margin-top: -2px;
+
+          transition: all 1s ease-out;
+
+        }
+
+
+        .healthy_item__benefit {
+
+          border-left: 1px solid #FFF;
+          padding: 0 25px;
+          min-width: 190px;
+          float: left;
+
+          margin: 15px 0;
+          text-align: center;
+
+          .number {
+
+            font-size: 2rem;
+
+          }
+
+
+
+        }
+
+
+        &::after {
+
+          content: '';
+          width: 100%;
+          height: 1px;
+          display: inline-block;
+          clear: both;
+
+        }
+
+      }
+      /////////
+
+
+
+
+    }
+
+
+    //Left list
+    .healthy_list_left {
+
+      .healthy_item {
+
+        .line {
+
+          right: 0;
+          margin-right: 40px;
+          margin-left: 0;
+          left: 100%;
+
+        }
+
+        .point {
+
+          left: auto;
+          right: -45%;
+
+
+
+        }
+
+        .healthy_item__benefit {
+
+          border: none;
+          border-right: 1px solid #FFF;
+          float: right;
+
+        }
+
+      }
+
+    }
+
+
+  }
+
+
+  
+}
+
+#healthy {
+
+
+  .animated {
+
+
+    .healthy_list {
+
+      .healthy_item {
+
+
+        .point {
+
+          transform: none;
+          opacity: 1;
+
+        }
+
+        .line {
+
+          left: -45%;
+
+        }
+
+
+      }
+
+    }
+
+    .healthy_list_left .healthy_item .line {
+
+      left: 100%;
+      right: -45%;
+
+    }
+
+
+
+  }
+
+
+}
+
+
+
+//Cleaning section
+.cleaning_section {
+
+
+  background: #e9d6ab;
+
+  color: #906f2a;
+
+  .section_before {
+
+    background-image: url(../img/cleaning_before.png);
+
+  }
+
+  .section_after {
+
+    background-image: url(../img/cleaning_after.png);
+
+  }
+
+
+
+  .cleaning_wrapper {
+
+    margin-top: 100px;
+    width: 100%;
+
+  }
+
+  .cleaning_egg {
+
+    width: 400px;
+    height: 400px;
+
+    margin: 0 auto;
+
+    transition: transform ease-out 1s;
+    transform: rotate(360deg);
+
+    .egg_compare {
+
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+
+    }
+
+    .egg_compare::before {
+
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: no-repeat center;
+      transform: rotate(-90deg);
+
+    }
+
+    .egg_before {
+
+      @include flex( center, center );
+
+      transition: top .2s ease-out;
+      cursor: pointer;
+      z-index: 1;
+
+
+      &::before {
+
+        background-image: url(../img/egg.png);
+
+
+
+      }
+
+      .egg_cleaning__layer {
+
+        border-radius: 100%;
+
+        width: 230px;
+        height: 170px;
+
+        overflow: hidden;
+        z-index: 1;
+
+
+        .crack {
+
+          width: 110px;
+          height: 100px;
+          position: absolute;
+          background-position: center;
+          background-repeat: no-repeat;
+          z-index: 2;
+
+        }
+
+      }
+
+    }
+
+
+    .egg_after {
+
+      &::before {
+
+        background-image: url(../img/egg_clean.png);
+
+      }
+    }
+
+
+
+  }
+
+  .animated {
+
+
+    transform: none;
+
+  }
+
+}
+
+
+
+//Reviews
+.reviews_section {
+
+  padding-bottom: 0;
+  overflow: hidden;
+
+  color: #686868;
+
+  &::before , &::after {
+
+    content: '';
+    position: absolute;
+    top: 0;
+    width: calc( 50% - 612px);
+    height: 400px;
+    background: url(../img/reviews_bg.jpg);
+    background-position: center;
+
+  }
+
+  &::before {
+
+    background-position: right bottom;
+
+  }
+
+  &::after {
+
+    right: 0;
+    background-position: left bottom;
+
+  }
+
+
+  .reviews_wrap {
+
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 300px;
+
+    .rev_arrows {
+
+      content: '';
+      display: block;
+      position: absolute;
+      top: 50%;
+      margin-top: -80px;
+      width: 55px;
+      height: 80px;
+      cursor: pointer;
+      opacity: 0.6;
+      background: no-repeat center;
+      background-size: contain;
+
+    }
+
+    .prev_rev_arrow {
+
+      left: -120px;
+      background-image: url(../img/left-arrow.svg);
+
+
+    }
+
+    .next_rev_arrow {
+
+      right: -120px;
+      background-image: url(../img/right-arrow.svg);
+
+    }
+
+
+    .reviews__item {
+
+      top: 0;
+      position: absolute;
+      text-align: center;
+      transform: none;
+      z-index: 1;
+      opacity: 0;
+      display: none;
+
+      transition: transform .5s ease-out;
+
+      .reviews__item__avatar {
+
+        width: 150px;
+        height: 150px;
+        border-radius: 300px;
+        position: absolute;
+        left: 50%;
+        margin-left: -75px;
+        top: -200px;
+
+      }
+
+
+      .reviews__item__text {
+
+        @include flex(center, center);
+
+
+        font-size: 1.8rem;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #cfcfcf;
+        min-height: 198px;
+
+
+
+      }
+
+      .reviews__item_author {
+
+        padding: 25px;
+        font-size: 1.4rem;
+
+        .name {
+
+          @include sans-reg;
+
+          font-weight: bold;
+
+        }
+
+      }
+
+    }
+
+    .reviews__item-active {
+
+      opacity: 1;
+      position: relative;
+      display: inline-block;
+      background: #FFF;
+      z-index: 2;
+
+    }
+
+    .reviews__item_prev, .reviews__item_next {
+
+      opacity: 0.5;
+      display: inline-block;
+      z-index: 1;
+
+    }
+
+    .reviews__item_prev {
+
+      transform: translateX( -130% ) scale(0.8, 0.8);
+
+
+    }
+
+    .reviews__item_next {
+
+      transform: translateX( 130% ) scale(0.8, 0.8);
+
+
+    }
+
+  }
+
+
+
+  .reviews_bottom {
+
+    margin-top: 20px;
+
+    width: 100%;
+    height: 400px;
+    background: url(../img/reviews_bottom_bg.jpg) center no-repeat;
+
+
+  }
+
+
+}
+
+
+//Order section
+.order_section {
+
+  background: #252525;
+  color: #b7b7b7;
+
+
+  .tariff_wrap {
+
+    @include flex( stretch, space-between );
+    flex-wrap: wrap;
+
+    margin-top: 100px;
+
+    .tariff:nth-child(2) {
+
+      border: 0 solid #292929;
+      border-left-width: 1px;
+      border-right-width: 1px;
+
+      &::before, &::after {
+
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: #1f1f1f;
+
+      }
+
+      &::before {
+
+        left: -2px;
+
+      }
+
+      &::after {
+
+        right: -2px;
+
+      }
+
+    }
+
+    .tariff {
+
+      @include flex(center, flex-start);
+
+
+
+      flex-direction: column;
+      font-size: 1.3rem;
+
+      flex-grow: 1;
+      flex-shrink: 0;
+      width: 33%;
+      min-width: 300px;
+
+      .tarif_name {
+
+        font-size: 2rem;
+
+      }
+
+      .advantages {
+
+        margin-top: 30px;
+
+        max-width: 180px;
+        min-height: 300px;
+
+
+        .advantages__item {
+
+          margin-bottom: 5px;
+          list-style: circle;
+
+        }
+
+      }
+
+      .tariff_bottom {
+
+        @include flex(center, flex-start);
+        flex-direction: column;
+
+        align-self: stretch;
+        flex-grow: 1;
+
+        font-size: 1.2rem;
+
+        .order_button {
+
+          padding: 5px 35px;
+          border: 1px solid #c38282;
+          border-radius: 50px;
+          color: #c38282;
+          text-transform: uppercase;
+          cursor: pointer;
+
+        }
+
+        .price {
+
+          font-size: .9rem;
+          margin-top: 10px;
+
+        }
+
+        .image {
+
+          width: 80%;
+          min-height: 200px;
+
+          display: block;
+          margin-top: 50px;
+
+          background: no-repeat center;
+          background-size: contain;
+
+        }
+
+
+
+      }
+
+
+
+    }
+
+    .tariff-lite .tariff_bottom .image {
+
+      background-image: url(../img/egg_lite.png);
+
+    }
+
+    .tariff-pro .tariff_bottom .image {
+
+      background-image: url(../img/egg_pro.png);
+
+    }
+
+    .tariff-team .tariff_bottom .image {
+
+      background-image: url(../img/egg_team.png);
+
+    }
+
+  }
+
+
+}
+
+//Footer
+.footer {
+
+  background: #171717;
+  padding: 25px;
+
+  color: #777;
+
+  .footer__container {
+
+    .footer__info {
+
+      .egg_icon {
+
+        width: 15px;
+        height: 15px;
+        background: url(../img/icon.png) no-repeat center;
+        background-size: contain;
+        color: transparent;
+        opacity: 0.5;
+
+      }
+
+    }
+
+    .footer__menu {
+
+      @include flex(center, flex-end);
+
+      .footer__menu__item {
+
+        @include sans-reg();
+
+        margin-left: 10px;
+        padding: 5px 25px;
+
+        border: 2px solid transparent;
+        border-radius: 50px;
+
+        font-size: .95rem;
+        text-transform: uppercase;
+        color: #777;
+
+      }
+
+    }
+
+  }
+
+}
+
+.popup-crack {
+
+  .popup-dialog .poster {
+
+    background-image: url(../img/crack_egg.png);
+
+  }
+
+}
+
+.popup-cleaning {
+
+  .popup-dialog .poster {
+
+    background-image: url(../img/cleaning_egg.png);
+
+  }
+
+}
+
+//--------Responsive--------//
+@import 'responsive';

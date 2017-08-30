@@ -1,0 +1,409 @@
+doctype html
+html
+    head
+        meta(charset="utf-8")
+        block title
+            title Omelet
+        meta(content="" name="author")
+        meta(content="" name="description")
+        meta(content="" name="keywords")
+        meta(content="width=device-width, initial-scale=1" name="viewport")
+        meta(content="ie=edge" http-equiv="x-ua-compatible")
+
+        //Bootstrap
+        link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous")
+
+        //Main project style
+        link(rel='stylesheet' href='assets/css/app.css')
+
+        link(rel="icon" href="favicon.png")
+
+    body#body
+
+        //Popup Crack Egg
+        #popup-crack.popup-dialog-wrapper.popup-crack
+
+            .popup-dialog
+
+                .poster
+                .text Покликайте по яйцу, чтобы разбить его
+                .button.close_dialog(onclick="bn_dialogClose(this);") Хорошо
+
+        //Popup Cleaning Egg
+        #popup-cleaning.popup-dialog-wrapper.popup-cleaning
+
+            .popup-dialog
+
+                .poster
+                .text Теперь перетащите слайдер, чтобы очистить яйцо
+                .button.close_dialog(onclick="bn_dialogClose(this);") Хорошо
+
+
+
+
+        //Header section
+        header#header.section.header_section.bg-white-gradient
+
+            .container
+
+                .top_menu__wrap
+
+                    .logo
+
+                        .icon
+                        .title.omelet_tm Omelet
+
+                    .top_menu__container
+
+                        nav.top_menu
+
+                            a(href="#header" onclick="goSection('#header', this)").top_menu__item About
+
+                            a(href="#design" onclick="goSection('#design', this)").top_menu__item Features
+
+                            a(href="#healthy" onclick="goSection('#healthy', this)").top_menu__item Nutrition
+
+                            a(href="#order" onclick="goSection('#order', this)").top_menu__item.top_menu__item-active By it now
+
+
+                        .top_menu__trigger
+                            span
+
+                .center_block
+
+                    h1.section_title <i>"</i> Sweet, Nutritious and Delicious<i>"</i>
+                    h2.section_desc The key to happiness is hidden in the <b class="omelet_tm">Omelet</b>
+
+
+                .egg_container
+
+                    .egg
+
+
+        //Shape section
+        section#design.section.design_section
+
+            .container
+
+                .section_title Various colours
+                .section_desc
+                    | <b class="omelet_tm">Omelet</b> provides a choice of three design options, which are unique.<br/>
+                    | Each design has been worked with love.
+
+
+                .row.egg_colors
+
+                    .col-md-3.egg_color__variant.silk_white(animation-when-scrolling="true")
+
+                        .egg_color__variant__title Silk White
+                        .egg.egg_color__variant__image
+
+
+
+                    .col-md-3.egg_color__variant.elegant_brown(animation-when-scrolling="true")
+
+                        .egg_color__variant__title Elegant brown
+                        .egg.egg_color__variant__image
+
+
+
+                    .col-md-3.egg_color__variant.dazzling_gold(animation-when-scrolling="true")
+
+                        .egg_color__variant__title Glamorous gold
+                        .egg.egg_color__variant__image
+
+
+        //Healthy section
+        section#healthy.section.healthy_section.bg-white-gradient
+
+            .section_before.healthy_before
+            .section_after.healthy_after
+
+            .container
+
+                .section_title Is <b class="omelet_tm">Omelet</b> healthy? Yes it is!
+                .section_desc
+                    | One egg contains 15% of the daily protein norm<br/>
+                    | The egg contains not a few microelements necessary for human life.
+
+
+
+
+
+
+                    .row.justify-content-md-center.healthy_wrapper(animation-when-scrolling="true")
+
+                        .col-md-4.healthy_list.healthy_list_left
+
+                            .healthy_item
+
+                                .point
+                                .line
+
+                                .healthy_item__benefit
+                                    .number 157
+                                    .text calories
+
+
+                            .healthy_item
+
+                                .point
+                                .line
+
+                                .healthy_item__benefit
+                                    .number 12g
+                                    .text proteins
+
+
+
+                        .col-md-4.half_egg
+
+
+
+                        .col-md-4.healthy_list
+
+                            .healthy_item
+
+                                .point
+                                .line
+
+                                .healthy_item__benefit
+                                    .number 55mg
+                                    .text calcium
+
+
+                            .healthy_item
+
+                                .point
+                                .line
+
+                                .healthy_item__benefit
+                                    .number 12mg
+                                    .text magnesium
+
+
+
+
+
+        section#cleaning.section.cleaning_section.bg-white-gradient
+
+            .section_before.cleaning_before
+            .section_after.cleaning_after
+
+            .container
+
+                .section_title Compact and easy to use
+                .section_desc
+                    | <b class="omelet_tm">Omelet</b> seriously approached the implementation of the functional eggs<br/>
+                    | We have worked every detail in our product.
+
+
+
+                .cleaning_wrapper
+
+
+                    #cleaning_egg.compare.cleaning_egg(animation-when-scrolling="true" call-back="showCleaningInstr")
+
+                        #whole_egg.egg_compare.compare_before.egg_before
+                            .egg_cleaning__layer(onclick="break_an_egg(this, event);")
+
+                        .egg_compare.compare_after.egg_after
+
+
+
+        section#reviews.section.reviews_section
+
+            .container
+
+                .section_title 100% Customer satisfaction!
+
+                .reviews_wrap
+
+                    .rev_arrows.prev_rev_arrow(onclick="leafRev('prev')")
+                    .rev_arrows.next_rev_arrow(onclick="leafRev('next')")
+
+                    .reviews__item.reviews__item_prev
+
+                        img.reviews__item__avatar(src="/assets/img/businessman.jpg")
+
+                        .reviews__item__text
+
+                            | "My business needs a quality product. The design of the eggs is elaborated with great care, attention is paid to every detail. We will continue to buy this product. In the eggs of the future of mankind!"
+
+                        .reviews__item_author
+
+                            | <b class="name">Hancock.</b> businessman
+
+
+                    .reviews__item.reviews__item-active
+
+                        img.reviews__item__avatar(src="/assets/img/avatar.jpg")
+
+                        .reviews__item__text
+
+                            | "I was skeptic at first, but when i tried the Egg for the first time, my life has completely changed! I'm a better person now. Everything is better with the Eggs."
+
+                        .reviews__item_author
+
+                            | <b class="name">Dmitriy Rybkin.</b> single mom
+
+
+
+                    .reviews__item.reviews__item_next
+
+                        img.reviews__item__avatar(src="/assets/img/peeeter.png")
+
+                        .reviews__item__text
+
+                            | "Lois is constantly angry when I throw eggs in the Meg. But it's sooooo much fun"
+
+                        .reviews__item_author
+
+                            | <b class="name">Peter Griffin.</b> unemployed
+
+
+
+
+
+                    .reviews__item
+
+                        img.reviews__item__avatar(src="/assets/img/businessman.jpg")
+
+                        .reviews__item__text
+
+                            | "My business needs a quality product. The design of the eggs is elaborated with great care, attention is paid to every detail. We will continue to buy this product. In the eggs of the future of mankind!"
+
+                        .reviews__item_author
+
+                            | <b class="name">Hancock.</b> businessman
+
+
+                    .reviews__item
+
+                        img.reviews__item__avatar(src="/assets/img/avatar.jpg")
+
+                        .reviews__item__text
+
+                            | "I was skeptic at first, but when i tried the Egg for the first time, my life has completely changed! I'm a better person now. Everything is better with the Eggs."
+
+                        .reviews__item_author
+
+                            | <b class="name">Dmitriy Rybkin.</b> single mom
+
+
+
+                    .reviews__item
+
+                        img.reviews__item__avatar(src="/assets/img/peeeter.png")
+
+                        .reviews__item__text
+
+                            | "Lois is constantly angry when I throw eggs in the Meg. But it's sooooo much fun"
+
+                        .reviews__item_author
+
+                            | <b class="name">Peter Griffin.</b> unemployed
+
+
+            .reviews_bottom
+
+
+
+
+        section#order.section.order_section
+
+            .container
+
+                .section_title Order one (or more) today!
+
+
+                .tariff_wrap
+
+                    .tariff.tariff-lite
+
+                        .tarif_name <b class="omelet_tm">Omelet</b> Lite
+
+                        ul.advantages
+                            li.advantages__item Small and compact
+                            li.advantages__item Highly portable
+                            li.advantages__item Unapologetically delicious
+
+
+                        .tariff_bottom
+
+                            .order_button Order
+                            .price starting at $9.99
+                            .image
+
+
+
+                    .tariff.tariff-pro
+
+                        .tarif_name <b class="omelet_tm">Omelet</b> Pro
+
+                        ul.advantages
+                            li.advantages__item Highly portable
+                            li.advantages__item Easily sliceable
+                            li.advantages__item Unapologetically delicious
+                            li.advantages__item Very nutritious
+
+                        .tariff_bottom
+
+                            .order_button Order
+                            .price starting at $9.99
+                            .image
+
+
+
+                    .tariff.tariff-team
+
+                        .tarif_name <b class="omelet_tm">Omelet</b> Team
+
+                        ul.advantages
+                            li.advantages__item Ideal for bigger groups
+                            li.advantages__item Easily sliceable
+                            li.advantages__item Unapologetically delicios
+                            li.advantages__item Very nutritious
+
+
+                        .tariff_bottom
+
+                            .order_button Order
+                            .price starting at $9.99
+                            .image
+
+
+
+
+        footer.footer
+
+            .container.footer__container
+
+                .row
+
+                    .col-md-5.footer__info
+                        | Since you came here to read this, have one <i class="egg_icon">hello</i> for free! <br/>
+                        | Copyright 2017 <b class="omelet_tm">Omelet</b> All rights reserved.
+
+                    nav.col-md-7.footer__menu
+
+                        a(href="#").footer__menu__item About
+
+                        a(href="#").footer__menu__item History
+
+                        a(href="#").footer__menu__item Contact us
+
+                        a(href="#").footer__menu__item Free eggs
+
+
+
+
+
+
+        script(type='text/javascript', id='__bs_script__')
+            | //<![CDATA[
+            | document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=3.10.10'><\/script>".replace("HOST", location.hostname));
+            | //]]>
+
+        script(src='https://code.jquery.com/jquery-3.2.1.min.js' defer)
+        script(src='assets/js/app.js' defer)
