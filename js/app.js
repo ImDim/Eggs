@@ -248,7 +248,7 @@ var section_an_w_s = $("*[animation-when-scrolling]");
 
 $(window).scroll(function () {
 
-    var scrollTop = $("body").scrollTop();
+    var scrollTop = $("body").scrollTop() ? $("body").scrollTop() : $("html").scrollTop();
 
     section_an_w_s.each(function() {
 
