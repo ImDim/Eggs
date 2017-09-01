@@ -203,6 +203,7 @@
       font-size: 3.5rem;
       line-height: 5rem;
 
+
     }
 
     .section_desc {
@@ -852,6 +853,8 @@
       opacity: 0;
       display: none;
       left: 0;
+      top: 0;
+      width: 100%;
 
       transition: transform .5s ease-out;
 
@@ -961,6 +964,7 @@
 
     @include flex( stretch, space-between );
     flex-wrap: wrap;
+    overflow: hidden;
 
     margin-top: 100px;
 

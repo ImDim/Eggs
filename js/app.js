@@ -5,7 +5,11 @@ function getRandomInt(min, max) {
 
 }
 
+function _scrollTop() {
 
+    return $("body").scrollTop() ? $("body").scrollTop() : $("html").scrollTop();
+
+}
 
 //Popup
 $(document).on("click", ".popup-dialog-wrapper", function(e) {
@@ -223,7 +227,7 @@ callBacks["showCleaningInstr"] = function showCleaningInstr() {
 
     setTimeout(function() {
 
-        var scrollTop = $("body").scrollTop();
+        var scrollTop = _scrollTop();
         var cleaning = $("#cleaning");
 
         if( scrollTop > cleaning.offset().top + cleaning.height() || scrollTop + window.screen.height < cleaning.offset().top ) {
@@ -234,6 +238,7 @@ callBacks["showCleaningInstr"] = function showCleaningInstr() {
         } else {
 
             bn_dialogShow("#popup-crack");
+            goSection("#cleaning_egg");
 
         }
 
@@ -248,7 +253,7 @@ var section_an_w_s = $("*[animation-when-scrolling]");
 
 $(window).scroll(function () {
 
-    var scrollTop = $("body").scrollTop() ? $("body").scrollTop() : $("html").scrollTop();
+    var scrollTop = _scrollTop();
 
     section_an_w_s.each(function() {
 
